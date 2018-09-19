@@ -8,7 +8,6 @@ using namespace cv;
 enum ImgMethod
 {
     IMACQ_CAM, //!< Images
-    IMACQ_IMGS, //!< Camera
     IMACQ_VID, //!< Video
 };
 

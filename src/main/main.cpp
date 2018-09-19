@@ -25,11 +25,6 @@ int main(int argc, char **argv)
     else
     {
         int method = IMACQ_CAM;
-        if(strcmp(argv[1], "-IMG") == 0)
-        {
-            method = IMACQ_IMGS;
-            initWaitKey = 0;
-        }
         if(strcmp(argv[1], "-VID") == 0)
         {
             method = IMACQ_VID;
@@ -38,7 +33,7 @@ int main(int argc, char **argv)
         if(strcmp(argv[1], "-CAM") == 0)
         {
             method = IMACQ_CAM;
-            initWaitKey = 20;
+            initWaitKey = 33;
         }
         string imgPath(argv[2]);
         test = new imgStream(method,imgPath);

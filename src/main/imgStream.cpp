@@ -32,29 +32,6 @@ void imgStream::initImageStream()
         capture = new VideoCapture(imgPath);
         assert(capture.isOpened());
         imgNum = capture->get(CV_CAP_PROP_FRAME_COUNT);
-        //cout << "======"<<endl;
-        /*if(!capture.isOpened())
-        {
-            assert
-            cout<<"fail to open!"<<endl;
-        */
-    }
-    if(method == IMACQ_IMGS)
-    {
-        capture == NULL;
-        getImgFromPath(imgPath);
-    }
-
-}
-
-
-void imgStream::getImgFromPath(string path)
-{
-    ifstream infile (path+"/image.txt");
-    string s;
-    while(getline(infile,s))
-    {
-        imgName.push(path+'/'+s);
     }
 
 }
@@ -63,31 +40,22 @@ void imgStream::getImgFromPath(string path)
 int imgStream::getCurrImage()
 {
 
-    if(method != IMACQ_IMGS)
+    if(currFrame < imgNum)
     {
-        if(currFrame < imgNum)
-            capture->read(currImage);
-        else
-            return -1;
-        currFrame++;
+	capture->read(currImage);
+// 	resize(currImage,currImage,Size(currImage.cols/4,currImage.rows/4),0,0,INTER_LINEAR);
     }
     else
-    {
-        if(imgName.empty() == true)
-            return -1;
-        string img_name = imgName.front();
-        currImage = imread(img_name);
-        imgName.pop();
+	return -1;
+    currFrame++;
 
-    }
     return 1;
 }
 
 
 void imgStream::exitImageStream()
 {
-    if(method != IMACQ_IMGS)
-        delete capture;
+	delete capture;
 }
 
 imgStream::~imgStream()
