@@ -86,4 +86,4 @@ add_subdirectory(src/libopentld)
 add_subdirectory(src/main)
 
 
-configure_file("${PROJECT_SOURCE_DIR}/OpenTLDConfig.cmake.in" "${PROJECT_BINARY_DIR}/OpenTLDConfig.cmake" @ONLY)
+#configure_file("${PROJECT_SOURCE_DIR}/tldkcfConfig.cmake.in")
