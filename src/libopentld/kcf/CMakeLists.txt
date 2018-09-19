@@ -1,0 +1,25 @@
+add_library(kcf
+    imacq/ImAcq.cpp
+    tld/Clustering.cpp
+    tld/DetectionResult.cpp
+    tld/DetectorCascade.cpp
+    tld/EnsembleClassifier.cpp
+    tld/ForegroundDetector.cpp
+    tld/kcf_tracking.cpp
+    tld/NNClassifier.cpp
+    tld/TLD.cpp
+    tld/TLDUtil.cpp
+    tld/VarianceFilter.cpp
+    imacq/ImAcq.h
+    tld/Clustering.h
+    tld/DetectionResult.h
+    tld/DetectorCascade.h
+    tld/EnsembleClassifier.h
+    tld/ForegroundDetector.h
+    tld/IntegralImage.h
+    tld/kcf_tracking.h
+    tld/NNClassifier.h
+    tld/NormalizedPatch.h
+    tld/TLD.h
+    tld/TLDUtil.h
+    tld/VarianceFilter.h)
